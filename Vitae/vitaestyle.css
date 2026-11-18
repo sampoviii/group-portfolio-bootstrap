@@ -1,0 +1,221 @@
+/* Base layout */
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: linear-gradient(to right, #b8e1ff, #dbeeff, #c9e4ff);
+  line-height: 2;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+nav a {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+/* Profile Card Container */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 50px 0;
+}
+
+/* Resume Paper/Card */
+.paper {
+  background-color: #fff;
+  width: 700px;
+  max-width: 90%; /* ✅ Prevent overflow on small screens */
+  padding: 35px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, width 0.3s ease;
+  animation: fadeUp 1s ease forwards;
+  margin: 0 auto; /* ✅ Always center */
+}
+
+.paper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Top Section */
+.top-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.top-part img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.top-part h3 {
+  margin: 5px 0;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.top-part p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Information Sections */
+.information h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 5px;
+  color: #333;
+}
+
+.information h4 {
+  margin: 10px 0 5px 0;
+  color: #444;
+}
+
+.information p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.information ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.information ul li {
+  margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 3px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    color: #555;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ========== Animations ========== */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 992px) {
+  .paper {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .paper {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .top-part img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .top-part h3 {
+    font-size: 22px;
+  }
+
+  .information h3 {
+    font-size: 18px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
